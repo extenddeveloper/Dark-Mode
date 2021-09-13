@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,700&display=swap');
+        :root{
+            --primary-color: #fff;
+            --secondary-color: #000;
+        }
+        .dark-theme{
+            --primary-color: #000;
+            --secondary-color: #fff;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            background-color: var(--primary-color);
+        }
+        h2{
+            font-size: 36px;
+        }
+        a{
+            text-decoration: none;
+        }
+        img{
+            width: 100%;
+        }
+        .container{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            width: 250px;
+        }
+        #moon {
+            width: 24px;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav ul {
+            list-style: none;
+        }
+        .nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+        .nav ul li a {
+            color: var(--secondary-color);
+            font-weight: 500;
+            padding: 5px 10px;
+            line-height: 80px;
+        }
+        .nav ul li a:hover{
+            color: #FF531B;
+            transition: .5s;
+        }
+        .hero-area {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 0;
+        }
+        .hero-text h2 {
+            font-size: 36px;
+            text-transform: capitalize;
+            line-height: 40px;
+            margin-bottom: 22px;
+            color: var(--secondary-color);
+        }
+        .hero-text h2 span {
+            color: #FF531B;
+        }
+        .hero-text p {
+            color: var(--secondary-color);
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .hero-text a {
+            background: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: var(--primary-color);
+        }
+        .hero-text a:hover{
+            background-color: #FF531B;
+            transition: .5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <a href="#"><img src="./images/logo.png" alt="Extend Developer" id="logo"></a>
+            </div>
+            <div class="nav">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <img src="./images/moon.png" alt="" id="moon">
+            </div>
+        </header>
+        <section>
+            <div class="hero-area">
+                <div class="hero-text">
+                    <h2>Create professional <span>Wordpress</span> Website.</h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas, suscipit. Earum, ipsam necessitatibus aut nemo iure fugit omnis quibusdam odio!</p>
+                    <a href="#">Download CV</a>
+                </div>
+                <div class="hero-image">
+                    <img src="./images/person.png" alt="">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+
+        var logo = document.getElementById("logo");
+        var dark = document.getElementById("moon");
+
+        dark.onclick = function(){
+            document.body.classList.toggle("dark-theme");
+
+            if(document.body.classList.contains("dark-theme")){
+                dark.src = "./images/sun.png";
+                logo.src = "./images/logo-white.png";
+            }else{
+                dark.src = "./images/moon.png";
+                logo.src = "./images/logo.png";
+            }
+        }
+
+    </script>
+</body>
+</html>
